@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>你好，世界</title>
+		<!-- <link rel="stylesheet" href="Helloworld.css"> -->
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color:#222;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				font-family: 'Arial', sans-serif;
+			}
+			.helloworld{
+				color:#fff;
+				font-size: 15vw;
+				position: relative;
+				animation: helloAnimation 2s forwards;
+			}
+			
+			.helloworld::after{
+				content: "Hello World";
+				animation: helloAnimation 2s forwards;
+				animation-delay: 2s;
+				color: transparent;
+				position: absolute;
+				top:0;
+				left:0;
+				background:linear-gradient(to right,#ff59ab,#fe0fef,#ffb380,#ffff01,#008102,#40e1d2,#418098,#9400d4);
+				animation: light 5s infinite;
+				background-clip:text;
+				-webkit-background-clip:text;
+			}
+			@keyframes helloAnimation {
+			    0% { 
+					transform: translateY(-150%);
+					opacity: 0;
+				}
+			    100% { 
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+			@keyframes light{
+				0%{
+					clip-path:circle(calc(19vw) at 0% 50%);
+				}
+				50%{
+					clip-path:circle(calc(19vw) at 100% 50%);
+				}
+				100%{
+					clip-path:circle(calc(19vw) at 0% 50%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="helloworld">Hello World</div>
+	</body>
+</html>
